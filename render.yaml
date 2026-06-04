@@ -1,0 +1,10 @@
+services:
+  - type: web_service
+    name: live-visitor-counter
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    autoDeploy: true
+    healthCheckPath: /
